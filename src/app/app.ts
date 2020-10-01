@@ -1,9 +1,10 @@
 import express, { Express } from "express";
 import { config as dotenv } from 'dotenv';
-import { graphqlHTTP } from 'express-graphql';
 
-import resolvers from '../graphql/resolvers';
-import schemas from '../graphql/schemas';
+import gqlMiddleware from '../graphql/graphql';
+import schemas from "../graphql/schemas/schemas";
+import resolvers from "../graphql/resolvers/resolvers";
+import { graphqlHTTP } from "express-graphql";
 
 const app: Express = express();
 dotenv();

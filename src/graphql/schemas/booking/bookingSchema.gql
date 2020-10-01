@@ -1,0 +1,16 @@
+type Booking {
+  _id: ID!
+  eventId: Event!
+  userId: User!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  bookings: [Booking!]!
+}
+
+type Mutation {
+  createBooking(eventId: String!): Booking!
+  cancelBooking(bookingId: String!): Event!
+}
