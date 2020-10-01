@@ -1,4 +1,5 @@
 import { Document } from 'mongoose';
+import { TUser, TUserDocument } from '../User/user.types';
 
 export type TEvent = {
   _id: string;
@@ -6,7 +7,7 @@ export type TEvent = {
   description: string;
   price: number;
   date: Date;
-  creator: string;
+  creator: string | TUser | TUserDocument;
 }
 
-export type TEventDocument = Document & TEvent;
+export type TEventDocument = Document & TEvent & { _doc?: TEvent };

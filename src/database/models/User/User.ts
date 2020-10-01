@@ -9,7 +9,8 @@ const userSchema: Schema = new Schema({
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    select: false
   },
   createdEvents: [{
     type: Schema.Types.ObjectId,
