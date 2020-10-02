@@ -2,7 +2,7 @@ import { Document } from 'mongoose';
 import { TEvent, TEventDocument } from '../Event/event.type';
 
 export type TUser = {
-  _id: string;
+  _id?: string;
   email: string;
   password?: string;
   createdEvents: Array<string | TEvent | TEventDocument>;

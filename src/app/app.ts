@@ -2,19 +2,11 @@ import express, { Express } from "express";
 import { config as dotenv } from 'dotenv';
 
 import gqlMiddleware from '../graphql/graphql';
-import schemas from "../graphql/schemas/schemas";
-import resolvers from "../graphql/resolvers/resolvers";
-import { graphqlHTTP } from "express-graphql";
 
 const app: Express = express();
 dotenv();
 
 app.use(express.json());
-
-app.use('/graphql', graphqlHTTP({
-  schema: schemas,
-  rootValue: resolvers,
-  graphiql: true,
-}));
+app.use('/graphql', gqlMiddleware);
 
 export default app;

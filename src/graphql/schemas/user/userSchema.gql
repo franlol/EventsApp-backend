@@ -5,6 +5,12 @@ type User {
   createdEvents: [Event!]
 }
 
+type UserAuth {
+  _id: ID!
+  token: String!
+  # tokenExpiresIn: String
+}
+
 input UserInput {
   email: String!
   password: String!
@@ -12,8 +18,9 @@ input UserInput {
 
 type Query {
   users: [User!]!
+  signIn(userInput: UserInput!): UserAuth
 }
 
 type Mutation {
-  createUser(userInput: UserInput): User
+  signup(userInput: UserInput!): UserAuth!
 }

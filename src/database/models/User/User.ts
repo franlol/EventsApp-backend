@@ -2,7 +2,6 @@ import { Model, model, Schema } from 'mongoose';
 import { TUserDocument } from './user.types';
 
 const userSchema: Schema = new Schema({
-
   email: {
     type: String,
     required: true
