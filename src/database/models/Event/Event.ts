@@ -1,4 +1,3 @@
-import { isRequiredArgument } from 'graphql';
 import { Schema, model, Model } from 'mongoose';
 import { TEventDocument } from './event.type';
 
